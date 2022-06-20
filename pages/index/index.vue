@@ -1,7 +1,7 @@
 <template>
-	<view class="find-container">
+	<view class="find-page-container">
 		<!-- 首页搜索输入框 -->
-		<view class="search-container">
+		<view class="find-search-container">
 			<u-search class="find-search" :placeholder="defaultSearchWork" :show-action="false" :disabled="true"
 				@click="handleSerachClick">
 			</u-search>
@@ -70,7 +70,9 @@
 		mounted() {},
 		methods: {
 			handleSerachClick() {
-				console.log('click后跳转到搜索页面');
+				uni.navigateTo({
+					url: '/pages/search/index'
+				})
 			},
 			async getBannerList() {
 				await getBanners().then(data => {
@@ -90,10 +92,10 @@
 </script>
 
 <style lang="scss" scoped>
-	.find-container {
+	.find-page-container {
 		background-color: #f5f5f5;
 
-		.search-container {
+		.find-search-container {
 			height: 55rpx;
 			background-color: #fff;
 			padding: 20rpx;

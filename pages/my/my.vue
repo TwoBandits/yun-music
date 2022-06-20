@@ -1,5 +1,5 @@
 <template>
-	<view class="my-container">
+	<view class="my-page-container">
 		<button type="default" @click="handleClick">登录</button>
 
 		<view class="user-info-container my-card">
@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-	.my-container {
+	.my-page-container {
 
 		// my 页面的统一卡片
 		.my-card {

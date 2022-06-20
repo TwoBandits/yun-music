@@ -82,3 +82,10 @@ export function getRecommendPlaylists() {
 		}
 	})
 }
+
+// 获取热搜列表
+export function getHotSearchDetail() {
+	return request({
+		url: '/search/hot/detail'
+	})
+}
