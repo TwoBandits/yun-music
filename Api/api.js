@@ -32,6 +32,27 @@ function request({
 	})
 }
 
+// 游客登录
+export function visitorLogin() {
+	return request({
+		url: '/register/anonimous'
+	})
+}
+
+// 获取账号信息
+export function getUserInfo() {
+	return request({
+		url: '/user/account'
+	})
+}
+
+// 根据 uid 获取用户详情
+export function getUserDetailById(uid) {
+	return request({
+		url: `/user/detail?uid=${uid}`
+	})
+}
+
 // 获取默认搜索关键词
 export function getDefaultSearchWork() {
 	return request({
@@ -43,6 +64,12 @@ export function getDefaultSearchWork() {
 export function getBanners() {
 	return request({
 		url: '/banner',
+	})
+}
+
+export function getDraganBallList() {
+	return request({
+		url: '/homepage/dragon/ball'
 	})
 }
 

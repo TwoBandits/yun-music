@@ -6,6 +6,12 @@
 				"navigationStyle": "custom",
 				"navigationBarTextStyle": "white"
 			}
+		},
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
 		}
 	],
 	"globalStyle": {
@@ -14,6 +20,19 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8",
 		"navigationStyle": "custom"
+	},
+	"tabBar": {
+		"color": "#8a8a8a",
+		"selectedColor": "#e51419",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"text": "发现"
+		}, {
+			"pagePath": "pages/my/my",
+			"text": "我的"
+		}]
 	},
 	"easycom": {
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"

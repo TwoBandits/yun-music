@@ -33,20 +33,14 @@
 				</scroll-view>
 			</view>
 		</view>
-
-		<view>
-			<u-tabbar>
-				<u-tabbar-item text="发现"></u-tabbar-item>
-				<u-tabbar-item text="我的"></u-tabbar-item>
-			</u-tabbar>
-		</view>
 	</view>
 </template>
 
 <script>
 	import {
-		getBanners,
 		getDefaultSearchWork,
+		getBanners,
+		getDraganBallList,
 		getRecommendPlaylists
 	} from '../../Api/api.js'
 	export default {
@@ -54,6 +48,8 @@
 			return {
 				// 搜索默认词
 				defaultSearchWork: '',
+				// 圆形图标列表
+				draganBallList: [],
 				// 轮播图数据
 				banners: [],
 				// 推荐歌单数据
@@ -64,8 +60,12 @@
 			getDefaultSearchWork().then(data => {
 				this.defaultSearchWork = data.data.showKeyword;
 			});
+			getDraganBallList().then(data => {
+				this.draganBallList = data.data;
+			})
 			this.getBannerList();
 			this.initPlaylist();
+
 		},
 		mounted() {},
 		methods: {
@@ -113,11 +113,9 @@
 
 	// 卡片统一
 	.find-card {
-		// height: 400rpx;
 		background-color: #fff;
 		padding: 10px;
 		margin-bottom: 20px;
-		// overflow: hidden;
 
 		.find-card-header {
 			margin: 20rpx;
@@ -135,22 +133,13 @@
 			width: 230rpx;
 
 			.scroll-x-item-title {
-				// color: red;
-				// width: 200rpx;
-				// font-size: 18rpx;
-				// display: -webkit-box;
-				// -webkit-box-orient: vertical;
-				// -webkit-line-clamp: 2;
-				// text-overflow: ellipsis;
-				// overflow: hidden;
-				// word-space: break-word;
 				white-space: normal;
 
 				display: -webkit-box;
 				width: 220rpx;
 				overflow: hidden;
 				text-overflow: ellipsis;
-				// word-wrap: break-word;
+				word-wrap: break-word;
 				white-space: normal !important;
 				-webkit-line-clamp: 2;
 				-webkit-box-orient: vertical;
