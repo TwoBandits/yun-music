@@ -89,3 +89,27 @@ export function getHotSearchDetail() {
 		url: '/search/hot/detail'
 	})
 }
+
+// 获取搜索建议
+export function getSearchSuggest(data) {
+	return request({
+		url: '/search/suggest',
+		data: data
+	})
+}
+
+// 多重匹配
+export function searchMultimatch(data) {
+	return request({
+		url: '/search/multimatch',
+		data: data
+	})
+}
+
+// 搜索
+export function search(data) {
+	return request({
+		url: '/search',
+		data: data
+	})
+}

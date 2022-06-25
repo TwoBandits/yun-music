@@ -83,7 +83,6 @@
 			},
 			async initPlaylist() {
 				await getRecommendPlaylists().then(data => {
-					console.log(data.result);
 					this.recommendPlaylists = data.result
 				})
 			}

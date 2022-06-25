@@ -19,6 +19,17 @@
 				"navigationStyle": "custom",
 				"navigationBarTitleText": "搜索"
 			}
+		}, {
+			"path": "pages/search/searchResult",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "搜索结果"
+			}
+		}, {
+			"path": "pages/playlistPage/index",
+			"style": {
+				"navigationBarTitleText": "歌单详情"
+			}
 		}
 	],
 	"globalStyle": {
@@ -42,7 +53,9 @@
 		}]
 	},
 	"easycom": {
+		"^y-(.*)": "@/components/y-$1/y-$1.vue",
 		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+
 	}
 
 }
